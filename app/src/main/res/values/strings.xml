@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Destination Guide</string>
+    <string name="welcome_greeting">Hello, Explorer! 👋</string>
+    <string name="welcome_title">Where to next?</string>
+    <string name="welcome_subtitle">Discover handpicked travel guides, vibrant local attractions, best travel times, and comprehensive tips for your dream journey.</string>
+    <string name="start_exploring">Start Exploring Now</string>
+
+    <string name="search_title">Where would you like to go?</string>
+    <string name="search_subtitle">Type any city, country, or landmark to explore live travel details.</string>
+    <string name="search_hint">Search destination (e.g. Paris, Tokyo)</string>
+    <string name="search_button">Search Destination</string>
+    <string name="popular_suggestions">Popular Getaways</string>
+    <string name="popular_suggestions_sub">Tap any destination to view live travel guide</string>
+
+    <string name="loading_destination">Curating your travel guide…</string>
+    <string name="overview">✨ Overview</string>
+    <string name="tourist_attractions">🏛️ Popular Tourist Attractions</string>
+    <string name="best_time_to_visit">☀️ Best Time to Visit</string>
+    <string name="popular_activities">🎒 Fun Activities &amp; Experiences</string>
+    <string name="travel_information">💡 Travel Tips &amp; Insights</string>
+    <string name="visit_website">Explore Official Web Guide →</string>
+    <string name="error_destination_not_found">We couldn\'t find details for that location. Please check your spelling or network connection and try again.</string>
+
+    <string name="retry">Try Again</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="refresh">Refresh</string>
+    <string name="web_view_title">Destination Web Guide</string>
+    <string name="default_activities">Exploring local sights, food tasting tours, and iconic historical landmarks.</string>
+</resources>

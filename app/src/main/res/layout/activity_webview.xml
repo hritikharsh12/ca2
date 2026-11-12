@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".WebViewActivity">
+
+    <!-- Top AppBar Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/webToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/web_view_title"
+        app:titleTextColor="@color/white" />
+
+    <!-- Top Horizontal Progress Bar -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/webProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:indeterminate="false"
+        app:indicatorColor="@color/accent"
+        app:trackColor="@color/primary_light" />
+
+    <!-- Full-Screen Android WebView -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Navigation Bar with Four Buttons: Back, Forward, Refresh, Home -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- 1. Back Button -->
+            <ImageButton
+                android:id="@+id/btnWebBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_back"
+                app:tint="@color/primary" />
+
+            <!-- 2. Forward Button -->
+            <ImageButton
+                android:id="@+id/btnWebForward"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/forward"
+                android:src="@drawable/ic_forward"
+                app:tint="@color/primary" />
+
+            <!-- 3. Refresh Button -->
+            <ImageButton
+                android:id="@+id/btnWebRefresh"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/refresh"
+                android:src="@drawable/ic_refresh"
+                app:tint="@color/primary" />
+
+            <!-- 4. Home Button -->
+            <ImageButton
+                android:id="@+id/btnWebHome"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Home"
+                android:src="@drawable/ic_home"
+                app:tint="@color/primary" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvWebStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                tools:text="https://en.wikipedia.org" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

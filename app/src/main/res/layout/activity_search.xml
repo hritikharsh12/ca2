@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".SearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:theme="@style/Theme.CA2">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/searchToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Destination Search"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Search Header Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/search_subtitle"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <!-- Search Input Box -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/searchTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/search_hint"
+                        app:boxCornerRadiusBottomEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp"
+                        app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusTopStart="14dp"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_search"
+                        app:startIconTint="@color/primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSearchQuery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textCapWords"
+                            android:maxLines="1"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Search Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/primary"
+                        android:text="@string/search_button"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        app:elevation="2dp"
+                        app:icon="@drawable/ic_search"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Suggestions Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/popular_suggestions"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/popular_suggestions_sub"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Popular Suggestions ChipGroup -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipParis"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paris 🇫🇷"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTokyo"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tokyo 🇯🇵"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNewYork"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New York 🇺🇸"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipRome"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rome 🇮🇹"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBali"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bali 🇮🇩"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCairo"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cairo 🇪🇬"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSydney"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sydney 🇦🇺"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLondon"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="London 🇬🇧"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipCornerRadius="24dp"
+                    app:chipIcon="@drawable/ic_location"
+                    app:chipIconTint="@color/primary"
+                    app:chipStrokeColor="@color/chip_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

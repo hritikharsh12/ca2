@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warm Modern Travel Palette -->
+    <color name="primary">#0D9488</color>
+    <color name="primary_dark">#0F766E</color>
+    <color name="primary_light">#CCFBF1</color>
+    <color name="primary_surface">#F0FDF4</color>
+
+    <color name="accent">#F59E0B</color>
+    <color name="accent_dark">#D97706</color>
+    <color name="accent_light">#FEF3C7</color>
+
+    <color name="background">#F8FAFC</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+
+    <color name="chip_background">#F1F5F9</color>
+    <color name="chip_stroke">#CBD5E1</color>
+    <color name="chip_selected_bg">#E0F2FE</color>
+    <color name="chip_selected_text">#0369A1</color>
+
+    <color name="divider">#E2E8F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="error_red">#EF4444</color>
+</resources>
